@@ -169,7 +169,8 @@ namespace MehanikASP.Views
                 //_context.Add(car);
                 _context.Cars.Add(car);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details/" + car.StrankaId);
+                
             }
             ViewData["StrankaIme"] = new SelectList(_context.Customers, "Id", "Id", car.StrankaId);
             return View(car);

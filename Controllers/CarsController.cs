@@ -65,7 +65,7 @@ namespace MehanikASP.Controllers
 
                 _context.Services.Add(service);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details/"+service.CarId);
             }
             ViewData["CarId"] = new SelectList(_context.Cars, "Id", "Id", service.CarId);
             return View(service);
@@ -188,7 +188,6 @@ namespace MehanikASP.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var car = await _context.Cars.FindAsync(id);
-            car.Stranka.Cars.Remove(car);
             _context.Cars.Remove(car);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
