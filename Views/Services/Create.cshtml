@@ -4,8 +4,8 @@
     ViewData["Title"] = "Dodaj servis";
 }
 
-<h1>Create</h1>
-<h4>Service</h4>
+<h1>Dodaj opravljen servis</h1>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -13,8 +13,9 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Datum" class="control-label"></label>
-                <input asp-for="Datum" class="form-control" />
+                <input asp-for="Datum" type="date" class="form-control" asp-format="{0:dd.MM.yyyy}" value=@Model.Datum/>
                 <span asp-validation-for="Datum" class="text-danger"></span>
+                
             </div>
             <div class="form-group">
                 <label asp-for="Kilometri" class="control-label"></label>
@@ -23,7 +24,7 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="OljniFilter" /> @Html.DisplayNameFor(model => model.OljniFilter)
+                    <input class="form-check-input" asp-for="OljniFilter"/> @Html.DisplayNameFor(model => model.OljniFilter)
                 </label>
             </div>
             <div class="form-group form-check">

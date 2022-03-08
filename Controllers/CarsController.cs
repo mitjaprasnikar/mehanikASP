@@ -112,10 +112,16 @@ namespace MehanikASP.Controllers
                 .Where(c => c.CarId == id)
                 .Include(c => c.Car)
                 .FirstOrDefault();
-
+            
             if (service == null)
             {
                 service = new Service { CarId = (int)id, Car = _context.Cars.Where(c => c.Id == id).FirstOrDefault() };
+            } else
+            {
+                service.OljniFilter = false;
+                service.ZracniFilter = false;
+                service.FilterGoriva = false;
+                service.FilterKabine = false;
             }
 
             return View(service);

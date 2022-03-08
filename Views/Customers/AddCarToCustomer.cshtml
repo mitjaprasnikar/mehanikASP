@@ -5,8 +5,8 @@
 }
 
 <h1>Dodaj Vozilo</h1>
-@Html.DisplayTextFor(c => c.Stranka.Ime) - @Html.DisplayTextFor(c => c.Stranka.Naslov) - @Html.DisplayTextFor(c => c.Stranka.Telefon)
-@Html.DisplayTextFor(c => c.Id)
+<a href="/Customers/Details/@Model.StrankaId"><h4>@Html.DisplayTextFor(c => c.Stranka.Ime) - @Html.DisplayTextFor(c => c.Stranka.Naslov) - @Html.DisplayTextFor(c => c.Stranka.Telefon)</h4></a>
+    
 <hr />
 <div class="row">
     <div class="col-md-4">

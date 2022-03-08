@@ -48,9 +48,10 @@ namespace MehanikASP.Views
         // GET: Services/Create
         public IActionResult Create()
         {
-            
+            Service service = new Service();
+            service.Datum = DateTime.Today;
             ViewData["CarId"] = new SelectList(_context.Cars, "Id", "Id");
-            return View();
+            return View(service);
         }
 
         // POST: Services/Create
@@ -62,7 +63,7 @@ namespace MehanikASP.Views
         {
             if (ModelState.IsValid)
             {
-                service.Datum.ToString("MM/dd/yyyy");
+                
                 _context.Add(service);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

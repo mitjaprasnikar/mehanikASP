@@ -4,22 +4,24 @@
     ViewData["Title"] = "Dodaj vozilu servis";
 }
 
-<h1>AddServiceToCar</h1>
+<h1>Dodaj vozilu opravljen servis</h1>
 
-<h4>Service</h4>
+<a href="/Cars/Details/@Model.CarId"<h4>@Model.Car.Znamka - @Model.Car.Model</h4></a>
+
 <hr />
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="CreateService">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Datum" class="control-label"></label>
-                <input asp-for="Datum" class="form-control" />
+                <input asp-for="Datum" class="form-control" value=@DateTime.Today/>
                 <span asp-validation-for="Datum" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Kilometri" class="control-label"></label>
-                <input asp-for="Kilometri" class="form-control" />
+                <input asp-for="Kilometri" class="form-control" value=""/>
                 <span asp-validation-for="Kilometri" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
@@ -44,7 +46,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Opombe" class="control-label"></label>
-                <input asp-for="Opombe" class="form-control" />
+                <input asp-for="Opombe" class="form-control" value=""/>
                 <span asp-validation-for="Opombe" class="text-danger"></span>
             </div>
             <div class="form-group">
