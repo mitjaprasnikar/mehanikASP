@@ -43,7 +43,7 @@
                 @Html.DisplayFor(modelItem => item.Naslov)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Telefon)
+              <a href="tel:@item.Telefon">  @Html.DisplayFor(modelItem => item.Telefon)</a>
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Uredi</a> |

@@ -9,7 +9,7 @@
 
 <div>
     <h3>@Html.DisplayFor(model => model.Znamka) - @Html.DisplayFor(model => model.Model)</h3>
-    <h5><a href="/Customers/Details/@Model.StrankaId">@Html.DisplayFor(model => model.Stranka.Ime) - @Html.DisplayFor(model => model.Stranka.Naslov) - @Html.DisplayFor(model => model.Stranka.Telefon)</a></h5>
+    <h5><a href="/Customers/Details/@Model.StrankaId">@Html.DisplayFor(model => model.Stranka.Ime) - @Html.DisplayFor(model => model.Stranka.Naslov)</a> - <a href="tel:@Model.Stranka.Telefon"> @Html.DisplayFor(model => model.Stranka.Telefon)</a></h5>
     
     
     
