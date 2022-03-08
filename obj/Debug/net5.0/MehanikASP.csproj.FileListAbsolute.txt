@@ -172,3 +172,5 @@ D:\Projekti\MehanikASP\obj\Debug\net5.0\Razor\Views\Services\Delete.cshtml.g.cs
 D:\Projekti\MehanikASP\obj\Debug\net5.0\Razor\Views\Services\Details.cshtml.g.cs
 D:\Projekti\MehanikASP\obj\Debug\net5.0\Razor\Views\Services\Edit.cshtml.g.cs
 D:\Projekti\MehanikASP\obj\Debug\net5.0\Razor\Views\Services\Index.cshtml.g.cs
+D:\Projekti\MehanikASP\obj\Debug\net5.0\Razor\Views\Customers\AddCarToCustomer.cshtml.g.cs
+D:\Projekti\MehanikASP\obj\Debug\net5.0\Razor\Views\Cars\AddServiceToCar.cshtml.g.cs

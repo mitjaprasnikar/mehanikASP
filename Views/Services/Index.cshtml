@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<MehanikASP.Models.Service>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Vsi servisi";
 }
 
-<h1>Index</h1>
+<h1>Vsi servisi</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Dodaj nov servis</a>
 </p>
 <table class="table">
     <thead>
@@ -34,7 +34,7 @@
                 @Html.DisplayNameFor(model => model.Opombe)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Car)
+               @Html.DisplayNameFor(model => model.Car.Znamka)
             </th>
             <th></th>
         </tr>
@@ -43,7 +43,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Datum)
+              <a href="/Services/Details/@item.Id">  @Html.ValueFor(m => item.Datum,"{0:dd/MM/yyyy}")</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Kilometri)
@@ -64,12 +64,13 @@
                 @Html.DisplayFor(modelItem => item.Opombe)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Car.Id)
+                <a href="/Cars/Details/@item.CarId">
+                @Html.DisplayFor(modelItem => item.Car.Znamka) @Html.DisplayFor(modelItem => item.Car.Model)</a>
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Uredi</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Podrobnosti</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Izbriši</a>
             </td>
         </tr>
 }

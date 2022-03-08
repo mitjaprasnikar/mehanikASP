@@ -142,6 +142,38 @@ namespace MehanikASP.Views
 
             return View(customer);
         }
+        public IActionResult AddCarToCustomer(int? id)
+        {
+            var customer = _context.Cars
+                .Where(c => c.StrankaId == id)
+                .Include(c => c.Stranka)
+                .FirstOrDefault();
+
+           if(customer ==null)
+            {
+                customer = new Car { StrankaId = (int)id,Stranka = _context.Customers.Where(c =>c.Id == id).FirstOrDefault() };
+            }
+            
+            return View(customer);
+        }
+
+        // POST: Cars/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateCar([Bind("Id,Znamka,Model,Letnik,VIN,kW,TipMotorja,RegOzn,StrankaId")] Car car)
+        {
+            if (ModelState.IsValid)
+            {
+                //_context.Add(car);
+                _context.Cars.Add(car);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["StrankaIme"] = new SelectList(_context.Customers, "Id", "Id", car.StrankaId);
+            return View(car);
+        }
 
         // POST: Customers/Delete/5
         [HttpPost, ActionName("Delete")]

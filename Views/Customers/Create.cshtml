@@ -1,12 +1,11 @@
 ﻿@model MehanikASP.Models.Customer
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Dodaj stranko";
 }
 
-<h1>Create</h1>
+<h1>Nova stranka</h1>
 
-<h4>Customer</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -28,14 +27,14 @@
                 <span asp-validation-for="Telefon" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Dodaj" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Nazaj</a>
 </div>
 
 @section Scripts {

@@ -50,9 +50,27 @@ namespace MehanikASP.Controllers
         // GET: Cars/Create
         public IActionResult Create()
         {
-            ViewData["StrankaId"] = new SelectList(_context.Customers, "Id", "Id");
+
+            ViewData["StrankaIme"] = new SelectList(_context.Customers, "Id", "Id");
             return View();
         }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateService([Bind("Id,Datum,Kilometri,OljniFilter,ZracniFilter,FilterGoriva,FilterKabine,Opombe,CarId")] Service service)
+        {
+            if (ModelState.IsValid)
+            {
+
+                _context.Services.Add(service);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["CarId"] = new SelectList(_context.Cars, "Id", "Id", service.CarId);
+            return View(service);
+        }
+
 
         // POST: Cars/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -88,7 +106,20 @@ namespace MehanikASP.Controllers
             ViewData["StrankaId"] = new SelectList(_context.Customers, "Id", "Id", car.StrankaId);
             return View(car);
         }
+        public IActionResult AddServiceToCar(int? id)
+        {
+            var service = _context.Services
+                .Where(c => c.CarId == id)
+                .Include(c => c.Car)
+                .FirstOrDefault();
 
+            if (service == null)
+            {
+                service = new Service { CarId = (int)id, Car = _context.Cars.Where(c => c.Id == id).FirstOrDefault() };
+            }
+
+            return View(service);
+        }
         // POST: Cars/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.

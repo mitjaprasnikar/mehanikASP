@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlt1xQGLj5UiBr37D5PDR6gAAAAACAAAAAAAQZgAAAAEAACAAAABjlgedNDR8WjF7KY88rCmftkgzCn57g85uApymKdBUsAAAAAAOgAAAAAIAACAAAAA/ChaNTaiaH++hyw8wf4DM/bBOgMTjChJNsqenGfJMmYAAAADSzZ8x3tgBEigjWF2vAbKqeJt7YBnAVxNRYQxvlnvNjZ+MB6o5+QMW/u2D0rfJnJYOF35rCwofsz0lnGxZUrfFRq+tTMv6d4L06gJQKw1h8iKoInexT+/Wuj5BX3evKiavmaReanTVC+mrb5bGkly7nnnpJzcjMr2YaIqt9chjJEAAAADx6VOtVlJE2h1JZY9D/AfueBNxA6126CQk7NfM/CHWkIFcf79FKWP+UQg1yyzxO04dziMstLSEVy3TtDmv+S0+</EncryptedPassword>
+    <History>False|2022-03-04T10:33:47.1886839Z;True|2022-03-04T11:21:24.4271210+01:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=%28localdb%29\mssqllocaldb%3bDatabase=aspnet-MehanikASP-A3EEEEC1-CA3F-4453-84F6-1D23D9213C55%3bTrusted_Connection=True%3bMultipleActiveResultSets=true</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="MehanikASP.Data.ApplicationDbContext">
+      <Value>Server=%28localdb%29\mssqllocaldb%3bDatabase=aspnet-MehanikASP-A3EEEEC1-CA3F-4453-84F6-1D23D9213C55%3bTrusted_Connection=True%3bMultipleActiveResultSets=true</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

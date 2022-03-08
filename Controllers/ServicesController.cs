@@ -48,6 +48,7 @@ namespace MehanikASP.Views
         // GET: Services/Create
         public IActionResult Create()
         {
+            
             ViewData["CarId"] = new SelectList(_context.Cars, "Id", "Id");
             return View();
         }
@@ -61,7 +62,7 @@ namespace MehanikASP.Views
         {
             if (ModelState.IsValid)
             {
-
+                service.Datum.ToString("MM/dd/yyyy");
                 _context.Add(service);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -148,7 +149,7 @@ namespace MehanikASP.Views
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var service = await _context.Services.FindAsync(id);
-            service.Car.Servisi.Remove(service);
+         
             _context.Services.Remove(service);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

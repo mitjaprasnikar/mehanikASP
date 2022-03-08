@@ -172,3 +172,5 @@ D:\Projekti\MehanikASP\obj\Release\net5.0\refint\MehanikASP.dll
 D:\Projekti\MehanikASP\obj\Release\net5.0\MehanikASP.pdb
 D:\Projekti\MehanikASP\obj\Release\net5.0\MehanikASP.genruntimeconfig.cache
 D:\Projekti\MehanikASP\obj\Release\net5.0\ref\MehanikASP.dll
+D:\Projekti\MehanikASP\obj\Release\net5.0\Razor\Views\Cars\AddServiceToCar.cshtml.g.cs
+D:\Projekti\MehanikASP\obj\Release\net5.0\Razor\Views\Customers\AddCarToCustomer.cshtml.g.cs
