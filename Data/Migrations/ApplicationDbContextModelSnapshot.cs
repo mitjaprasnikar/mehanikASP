@@ -100,11 +100,17 @@ namespace MehanikASP.Data.Migrations
                     b.Property<int>("Kilometri")
                         .HasColumnType("int");
 
+                    b.Property<bool>("MikroJermen")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("OljniFilter")
                         .HasColumnType("bit");
 
                     b.Property<string>("Opombe")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("ZobatiJermen")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("ZracniFilter")
                         .HasColumnType("bit");

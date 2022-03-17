@@ -58,7 +58,7 @@ namespace MehanikASP.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateService([Bind("Id,Datum,Kilometri,OljniFilter,ZracniFilter,FilterGoriva,FilterKabine,Opombe,CarId")] Service service)
+        public async Task<IActionResult> CreateService([Bind("Id,Datum,Kilometri,OljniFilter,ZracniFilter,FilterGoriva,FilterKabine,ZobatiJermen,MikroJermen,Opombe,CarId")] Service service)
         {
             if (ModelState.IsValid)
             {

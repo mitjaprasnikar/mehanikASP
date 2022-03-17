@@ -17,6 +17,8 @@ namespace MehanikASP.Models
         public bool ZracniFilter { get; set; }
         public bool FilterGoriva { get; set; }
         public bool FilterKabine { get; set; }
+        public bool ZobatiJermen { get; set; }
+        public bool MikroJermen { get; set; }
         public string Opombe { get; set; }
         public int CarId { get; set; }
         public Car Car { get; set; }

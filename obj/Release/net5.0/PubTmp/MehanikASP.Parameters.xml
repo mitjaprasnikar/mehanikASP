@@ -3,4 +3,7 @@
   <parameter name="IIS Web Application Name" description="" value="mitjaprasnikar-001-subsite2" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Projekti\\MehanikASP\\obj\\Release\\net5\.0\\PubTmp\\Out\\$" />
   </parameter>
+  <parameter name="MehanikASP.Data.ApplicationDbContext" description="" value="Data Source=SQL5107.site4now.net;Initial Catalog=db_a83b91_trlep;User Id=db_a83b91_trlep_admin;Password=spider13" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^D:\\Projekti\\MehanikASP\\obj\\Release\\net5\.0\\PubTmp\\EFSQLScripts\\MehanikASP\.Data\.ApplicationDbContext\.sql$" />
+  </parameter>
 </parameters>
